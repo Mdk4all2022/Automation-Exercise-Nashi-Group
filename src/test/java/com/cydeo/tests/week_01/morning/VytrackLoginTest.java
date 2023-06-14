@@ -70,6 +70,8 @@ public class VytrackLoginTest {
         WebElement password = driver.findElement(By.xpath("//input[@placeholder='Password']"));
         password.sendKeys("UserUser123" + Keys.ENTER);
 
+        Thread.sleep(2000);
+
         // 5- Verify the title is "Dashboard"
         String actualTitle = driver.getTitle();
         String expectedTitle = "Dashboard";
