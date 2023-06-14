@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -34,8 +35,12 @@ public class VytrackLoginTest {
         WebElement loginLink = driver.findElement(By.xpath("(//a[.='LOGIN'])[1]"));
         loginLink.click();
 
-
         // 3- Verify the title contains "Login"
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Login";
+
+        Assert.assertTrue(actualTitle.contains(expectedTitle));
+
 
     }
 
