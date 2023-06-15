@@ -18,7 +18,7 @@ ____________________________________________
  1- Setup the "browser driver"
  2- Go to "https://vytrack.com"
  3- Click Login label
- 3- Verify the title contains "Login"
+ 4- Verify the title contains "Login"
 
 ____________________________________________
 
@@ -49,4 +49,4 @@ ____________________________________________
 
   1-open a chrome browser       
   2-goto https://vytrack.com/
-  3-verify Home, About us, Our Approach, Product and Services, Contact and LOGIN labels are displayed
+  3-verify Home, About us, Our Approach, Products and Services, Contact and LOGIN labels are displayed
