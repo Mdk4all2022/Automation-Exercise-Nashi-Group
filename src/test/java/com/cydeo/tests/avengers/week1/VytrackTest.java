@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -69,6 +70,22 @@ public class VytrackTest {
 
         Assert.assertEquals(actualPasswordAttributeValue,expectedPasswordAttributeValue,"Password hidden verification failed!");
 
+    }
+
+    @Test
+    public void vytrack_all_links_test(){
+
+
+    }
+
+
+
+
+    @AfterMethod
+    public void tearDown(){
+        // you can write here another line of codes to look at you all
+        // Test methods to decide which line of codes  are common
+        driver.quit();
     }
 
 
