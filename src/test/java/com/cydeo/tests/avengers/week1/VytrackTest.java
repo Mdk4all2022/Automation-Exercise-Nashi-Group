@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class VytrackTest {
 
@@ -74,6 +75,17 @@ public class VytrackTest {
 
     @Test
     public void vytrack_all_links_test(){
+//    TC005 As a user I should be able to see Home, About us, Our Approach, Product and Services, Contact and LOGIN labels are displayed
+//
+//  1-open a chrome browser
+//  2-goto https://vytrack.com/
+//  3-verify Home, About us, Our Approach, Product and Services, Contact and LOGIN links are displayed
+        List<WebElement> allTopLinks = driver.findElements(By.xpath("//ul[@id='top-menu']/li/a"));
+
+        for (WebElement eachLink : allTopLinks) {
+            System.out.println(eachLink.getText());
+            Assert.assertTrue(eachLink.isDisplayed());
+        }
 
 
     }
