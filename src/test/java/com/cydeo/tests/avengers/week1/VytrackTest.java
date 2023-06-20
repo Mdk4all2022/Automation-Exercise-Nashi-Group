@@ -32,11 +32,13 @@ public class VytrackTest {
 
 
     @Test
-    public void vytrack_aboutus_link_test(){
+    public void vytrack_aboutus_link_test() throws InterruptedException {
 
         // 3- Click "About us" link
         WebElement aboutusLink = driver.findElement(By.xpath("(//a[@href='https://vytrack.com/about-us/'])[1]"));
         aboutusLink.click();
+
+        Thread.sleep(3000);
 
         // 4- Verify the url contains "about-us"
         String actualUrl = driver.getCurrentUrl();
@@ -45,6 +47,34 @@ public class VytrackTest {
         Assert.assertTrue(actualUrl.contains(expectedUrl),"About us link url verification failed!");
 
     }
+
+    @Test
+    public void vytrack_login_hidden_password_test(){
+       //TC003 As a user I should be able to see the password hidden as default
+        //
+        // 1- Setup the "browser driver"
+        // 2- Go to "https://vytrack.com"
+        // 3- Click Login label
+        driver.findElement(By.xpath("(//a[text()='LOGIN'])[1]")).click();
+
+        // 4- Login to application with username as "user1" and password as "UserUser123"
+        WebElement username = driver.findElement(By.id("prependedInput"));
+        username.sendKeys("user1");
+
+        WebElement password = driver.findElement(By.name("_password"));
+
+        // 5- Verify the password is hidden
+        String actualPasswordAttributeValue = password.getAttribute("type");
+        String expectedPasswordAttributeValue = "password";
+
+        Assert.assertEquals(actualPasswordAttributeValue,expectedPasswordAttributeValue,"Password hidden verification failed!");
+
+    }
+
+
+
+
+
 
 
 }
