@@ -1,5 +1,6 @@
 package com.cydeo.utilities;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -84,5 +85,13 @@ public class BrowserUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, "+ pixels +")");
     }
+
+
+    public static void clickOption(WebDriver driver,String option){
+
+        driver.findElement(By.linkText(option)).click();
+
+    }
+
 
 }

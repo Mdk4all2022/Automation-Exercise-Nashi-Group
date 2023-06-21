@@ -27,7 +27,9 @@ public class CheckboxPractice extends TestBase {
 
         //  3-click Checkboxes
         // Since I will not need Checkbox webelement in next coming lines, I did not store in WebElement
-        driver.findElement(By.linkText("Checkboxes")).click();
+        //driver.findElement(By.linkText("Checkboxes")).click();
+
+        BrowserUtils.clickOption(driver,"Checkboxes");
 
         //  4-verify title equals Checkboxes
        // Assert.assertTrue(driver.getTitle().equals("Checkboxes"));
