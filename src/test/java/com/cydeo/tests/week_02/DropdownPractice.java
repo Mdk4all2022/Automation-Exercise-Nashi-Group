@@ -9,11 +9,6 @@ import org.testng.annotations.Test;
 
 public class DropdownPractice extends TestBase {
 
-     //TC003 As a user I should be able to see default option as Select a State
-    //  1-open a chrome browser
-    //  2-goto https://practice.cydeo.com/dropdown
-    //  3-verify default option Select a State
-
 
     @Test
     public void dropdown_test(){
@@ -33,5 +28,30 @@ public class DropdownPractice extends TestBase {
 
     }
 
+    @Test
+    public void dropdown_test2(){
+
+       //As a user I should be able to select Alabama
+        //  1-open a chrome browser
+        //  2-goto https://practice.cydeo.com/dropdown
+        driver.get("https://practice.cydeo.com/dropdown");
+
+        //  3-select Alabama
+        Select selectState = new Select(driver.findElement(By.id("state")));
+
+//        selectState.selectByIndex(1);
+//        selectState.selectByValue("AL");
+        selectState.selectByVisibleText("Alabama");
+
+        //  4-verify Alabama is selected
+
+        WebElement currentSelectedOption = selectState.getFirstSelectedOption();
+
+        String actualSelectedOption = currentSelectedOption.getText();
+        String expectedSelectedOption = "Alabama";
+
+        Assert.assertEquals(actualSelectedOption,expectedSelectedOption);
+
+    }
 
 }
