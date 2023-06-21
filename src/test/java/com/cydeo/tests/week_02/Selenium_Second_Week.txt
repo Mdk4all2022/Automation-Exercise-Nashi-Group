@@ -43,7 +43,7 @@ ____________________________________________
    ** TC004 As a user I should be able to seelct Alabama
   1-open a chrome browser
   2-goto https://practice.cydeo.com/dropdown
-  3-seelct Alabama
+  3-select Alabama
   4-verify Alabama is selected
 
   ____________________________________________
