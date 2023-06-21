@@ -1,4 +1,4 @@
-package com.cydeo.tests.week_02;
+package com.cydeo.tests.week_02.morning;
 
 import com.cydeo.tests.base.TestBase;
 import org.openqa.selenium.By;
