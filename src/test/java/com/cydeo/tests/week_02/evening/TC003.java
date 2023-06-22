@@ -1,13 +1,13 @@
 package com.cydeo.tests.week_02.evening;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+
 
 public class TC003 extends TestBase{
 
@@ -22,7 +22,14 @@ public class TC003 extends TestBase{
 
        */
       //  3-click Dropdown
+        TC001.clickElementForPractice(driver,"Dropdown");
       //  4-verify default option Select a State
+
+        WebElement stateElement = driver.findElement(By.xpath("//select[@id='state']"));
+        Select select=new Select(stateElement);
+        String actualText = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualText,"Select a State");
+
 
     }
 
