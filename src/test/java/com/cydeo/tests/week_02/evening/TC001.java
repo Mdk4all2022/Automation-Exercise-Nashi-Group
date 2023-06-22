@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TC001 {
-
     /*
     Mac     -->  command+N : creating methods
     Windows -->  Alt+insert : creating methods
