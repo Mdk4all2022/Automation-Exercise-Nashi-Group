@@ -36,8 +36,15 @@ public class TC001 {
     //    4-verify title equals Checkboxes
         Assert.assertEquals(driver.getTitle(),"Checkboxes");
     //    5-click Checkbox 1
-    //    6-verify the Checkbox 1 is selected
+
+        WebElement checkbox1 = driver.findElement(By.xpath("//form/input[@id='box1']"));
+        checkbox1.click();
+        //    6-verify the Checkbox 1 is selected
+        Assert.assertTrue(checkbox1.isSelected());
+
     //    7-click Checkbox 2
+
+
     //    8-verify the Checkbox 2 is not selected
 
 
