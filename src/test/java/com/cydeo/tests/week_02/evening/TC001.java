@@ -19,41 +19,55 @@ public class TC001 {
 
     @Test
     public void test001() {
-    //    **  TC001 As a user I should be able to click checkboxes
+        //    **  TC001 As a user I should be able to click checkboxes
 
-    //    1-open a chrome browser
+        //    1-open a chrome browser
         WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    //    2-goto https://practice.cydeo.com/
+        //    2-goto https://practice.cydeo.com/
         driver.get("https://practice.cydeo.com/");
-    //    3-click Checkboxes
+        //    3-click Checkboxes
 
-      //  WebElement element = driver.findElement(By.xpath("//ul[@class='list-group']/li/a[.='Checkboxes']"));
-       // element.click();
-          clickElementForPractice(driver,"Autocomplete");
-    //    4-verify title equals Checkboxes
-        Assert.assertEquals(driver.getTitle(),"Checkboxes");
-    //    5-click Checkbox 1
+        //  WebElement element = driver.findElement(By.xpath("//ul[@class='list-group']/li/a[.='Checkboxes']"));
+        // element.click();
+        clickElementForPractice(driver, "Checkboxes");
+        //    4-verify title equals Checkboxes
+        Assert.assertEquals(driver.getTitle(), "Checkboxes");
+        //    5-click Checkbox 1
 
         WebElement checkbox1 = driver.findElement(By.xpath("//form/input[@id='box1']"));
         checkbox1.click();
         //    6-verify the Checkbox 1 is selected
         Assert.assertTrue(checkbox1.isSelected());
 
-    //    7-click Checkbox 2
+        //    7-click Checkbox 2
+        WebElement checkbox2 = driver.findElement(By.xpath("//form/input[@id='box2']"));
+        checkbox2.click();
 
+        //    8-verify the Checkbox 2 is not selected
+        //Assert.assertFalse(checkbox2.isSelected());
+        Assert.assertTrue(!checkbox2.isSelected());
 
-    //    8-verify the Checkbox 2 is not selected
-
+        //close browser
+        sleep(3);
+        driver.close();
 
 
     }
 
+    public static void sleep(int seconds){
+        try {
+            Thread.sleep(seconds*1000);
+        }catch (Exception e){
 
-    public static void clickElementForPractice(WebDriver driver,String elementName){
-        String locator="//ul[@class='list-group']/li/a[.='"+elementName+"']";
+        }
+    }
+
+
+    public static void clickElementForPractice(WebDriver driver, String elementName) {
+        String locator = "//ul[@class='list-group']/li/a[.='" + elementName + "']";
         WebElement element = driver.findElement(By.xpath(locator));
         element.click();
     }
