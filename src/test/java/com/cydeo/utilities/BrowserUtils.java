@@ -57,35 +57,6 @@ public class BrowserUtils {
         Assert.assertTrue(driver.getTitle().contains(expectedInTitle));
     }
 
-    /*
-    This method accepts WebElement target,
-    and waits for that WebElement not to be displayed on the page
-     */
-    public static void waitForInvisibilityOf(WebElement target){
-        //Create the object of 'WebDriverWait' class, and set up the constructor args
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-
-        //use the 'wait' object with the proper syntax to create explicit wait conditions.
-        wait.until(ExpectedConditions.invisibilityOf(target));
-    }
-
-    /*
-    This method accepts String title,
-    and waits for that Title to contain given String value.
-     */
-    public static void waitForTitleContains(String title){
-        //Create the object of 'WebDriverWait' class, and set up the constructor args
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-
-        //use the 'wait' object with the proper syntax to create explicit wait conditions.
-        wait.until(ExpectedConditions.titleContains(title));
-    }
-
-    public static void scrollDown(int pixels) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0, "+ pixels +")");
-    }
-
 
     public static void clickOption(WebDriver driver,String option){
 
