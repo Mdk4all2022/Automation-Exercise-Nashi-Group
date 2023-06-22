@@ -19,7 +19,7 @@ public abstract class TestBase {
     @BeforeMethod
     public void setup(){
         // 1. Open Chrome browser
-        driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
+      //  driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
