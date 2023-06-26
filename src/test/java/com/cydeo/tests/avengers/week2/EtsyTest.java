@@ -3,13 +3,12 @@ package com.cydeo.tests.avengers.week2;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class isDisplayedisEnabled {
+public class EtsyTest {
 
     WebDriver driver;
 
@@ -24,21 +23,15 @@ public class isDisplayedisEnabled {
     }
 
     @Test
-    public void isDisplayed_isEnabled_test(){
-        //TC: isDisplayed/isEnabled
-        //
-        //   1- Navigate to "https://www.uitestpractice.com/"
-        driver.get("http://www.uitestpractice.com/");
+    public void etsy_search_result_test(){
 
-        //   2- Verify main page is launched;
-
-
-        //   3-"Testing Controls" Tab should be displayed on left top (visible and enabled)
+        //TC: Etsy checkbox and radio button
+        //		1. Go to https://www.etsy.com
+        //		2. Search for “wooden spoon”
+        //		3. Click on filters
+        //		4. Select free shipping, on sale
+        //		5. Select under $25 Click on apply filters
+        //		6. Print count of results
     }
 
-
-    @AfterMethod
-    public void teardown(){
-        driver.quit();
-    }
 }
