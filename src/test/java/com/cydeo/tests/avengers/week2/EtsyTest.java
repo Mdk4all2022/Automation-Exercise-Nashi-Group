@@ -43,20 +43,20 @@ public class EtsyTest {
         //		3. Click on All Filters
         driver.findElement(By.xpath("//span[text()='All Filters']")).click();
 
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(6);
 
         //		4. Select free shipping, on sale
         driver.findElement(By.xpath("//label[@for='special-offers-free-shipping']")).click();
 
         driver.findElement(By.xpath("//label[@for='special-offers-on-sale']")).click();
 
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(6);
 
         //		5. Select under $25 Click on apply filters
         driver.findElement(By.xpath("//label[@for='price-input-1']")).click();
         driver.findElement(By.cssSelector("button[aria-label='Apply']")).click();
 
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(6);
 
         //		6. Print count of results
         WebElement result = driver.findElement(By.xpath("//span[contains(text(),'results,')]"));
@@ -68,4 +68,6 @@ public class EtsyTest {
     public void teardown(){
         driver.quit();
     }
+
+
 }
