@@ -51,11 +51,19 @@ public class IframePractice {
         Assert.assertEquals(actualHeader,expectedHeader,"Header text verification failed!");
 
 
-
         // if test steps continue to do any verification outside of this iframe
         // you have to go outside of this iframe with using parentFrame() or defaultContent()
-        driver.switchTo().parentFrame();// if iframe was nested, it will take to do parent frame
-        driver.switchTo().defaultContent();// will take you directly to do MAIN HTML
+//        driver.switchTo().parentFrame();// if iframe was nested, it will take to do parent frame
+          driver.switchTo().defaultContent();// will take you directly to do MAIN HTML
+
+        // verify "Frames" text in top header
+        WebElement topHeader = driver.findElement(By.xpath("//div[@class='main-header']"));
+        Assert.assertEquals(topHeader.getText(),"Frames");
+
+
+
+
+
 
 
     }
