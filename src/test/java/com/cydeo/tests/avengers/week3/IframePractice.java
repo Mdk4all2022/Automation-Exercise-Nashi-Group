@@ -38,7 +38,10 @@ public class IframePractice {
 
        // - Verify child frames texts are equal : "This is a sample page"
 
-        driver.switchTo().frame(2);
+        //driver.switchTo().frame(2);
+       // driver.switchTo().frame("frame1");
+        // we locate iframe webelement inside frame method.
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='frame1']")));
 
         WebElement header = driver.findElement(By.id("sampleHeading"));
 
@@ -46,6 +49,13 @@ public class IframePractice {
         String expectedHeader = "This is a sample page";
 
         Assert.assertEquals(actualHeader,expectedHeader,"Header text verification failed!");
+
+
+
+        // if test steps continue to do any verification outside of this iframe
+        // you have to go outside of this iframe with using parentFrame() or defaultContent()
+        driver.switchTo().parentFrame();// if iframe was nested, it will take to do parent frame
+        driver.switchTo().defaultContent();// will take you directly to do MAIN HTML
 
 
     }
