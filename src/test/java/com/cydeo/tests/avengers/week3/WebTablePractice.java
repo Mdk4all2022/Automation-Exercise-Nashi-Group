@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class WebTablePractice {
 
@@ -52,7 +53,18 @@ public class WebTablePractice {
         Assert.assertEquals(frankEmail.getText(),"fbach@yahoo.com");
 
 
-   // xpath of location email from name --> //table[@id='table1']//td[.='Frank']/../td[.='fbach@yahoo.com']
+        // print out all table
+        WebElement alltable = driver.findElement(By.xpath("//table[@id='table1']"));
+        System.out.println("alltable.getText() = " + alltable.getText());
+
+        // print out all Website coloumn
+        List<WebElement> websiteCol = driver.findElements(By.xpath("//table[@id='table1']//th[@class='header']//span[.='Web Site']/../../../../tbody//td[contains(text(),'http')]"));
+        for (WebElement eachCol : websiteCol) {
+            System.out.println("eachCol.getText() = " + eachCol.getText());
+        }
+
+
+        // xpath of location email from name --> //table[@id='table1']//td[.='Frank']/../td[.='fbach@yahoo.com']
    // xpath of email from first name --> //table[@id='table1']//td[.='Frank']/following-sibling::td[1]
 
    // xpath of last name from first name --> //table[@id='table1']//td[.='Frank']/preceding-sibling::td
