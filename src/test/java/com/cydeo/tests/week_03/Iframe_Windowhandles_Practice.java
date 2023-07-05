@@ -67,8 +67,14 @@ public class Iframe_Windowhandles_Practice extends TestBase {
         Assert.assertTrue(logo.isDisplayed(),"Logo did not displayed!");
 
         //Step 9- Go back (Switch) to the first window.
+        driver.switchTo().window(mainWindowHandle);
+
         //Step 10- Get the current window’s handle and write to the console window. It must be the first window handle.
-        //Step 11- Check the See Run Button Text. It must contain “Run >” text.
+        System.out.println("Main Window handle= " + driver.getWindowHandle());
+
+        //Step 11- Check the See Run Button Text. It must contain “Run ❯” text.
+        WebElement runBtn = driver.findElement(By.id("runbtn"));
+        Assert.assertTrue(runBtn.getText().contains("Run ❯"));
 
     }
 
