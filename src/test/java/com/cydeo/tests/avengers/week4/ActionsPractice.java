@@ -1,6 +1,7 @@
 package com.cydeo.tests.avengers.week4;
 
 import com.cydeo.tests.base.TestBase;
+import com.cydeo.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,13 +29,17 @@ public class ActionsPractice extends TestBase {
 
         Actions actions = new Actions(driver);
 
+        // for first image we used drag and drop method
         actions.dragAndDrop(firstImg,trashBox).perform();
 
+        // for second image we used channing method
         actions.moveToElement(secondImg)
                 .clickAndHold()
                 .moveToElement(trashBox)
                 .pause(3000)
                 .release().perform();
+
+        BrowserUtils.sleep(3);
 
         //    - Verify Trash has 2 photo
         List<WebElement> trashImgs = driver.findElements(By.xpath("//div[@id='trash']//li"));
