@@ -38,8 +38,8 @@ public class ExplicitWaitPractice extends TestBase {
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         //click one button
-       // wait.until(ExpectedConditions.elementToBeClickable(one));
-        BrowserUtils.waitforClickability(driver,one);
+        wait.until(ExpectedConditions.elementToBeClickable(one));
+       // BrowserUtils.waitforClickability(driver,one);
         one.click();
 
         //click two button
