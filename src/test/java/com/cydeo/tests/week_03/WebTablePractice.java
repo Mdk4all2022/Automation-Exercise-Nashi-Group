@@ -12,7 +12,7 @@ public class WebTablePractice extends TestBase {
 
 
     @Test
-    public void webtable_test(){
+    public void webtable_test() {
 
         //url = http://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html
 
@@ -33,21 +33,33 @@ public class WebTablePractice extends TestBase {
         //Step 4- using if else condition we will check the specific date
         //Step 5- If the date is matched then click and break the loop.
 
-        for (WebElement eachDay : allDays) {
-
-            String day = eachDay.getText();
-            System.out.println("eachDay.getText() = " + day);
-
-            if(day.equalsIgnoreCase("5")){
-                eachDay.click();
-                break;
+        for (int i = 0; i < 31; i++) {
+            for (WebElement element : allDays) {
+                if (element.getText().equalsIgnoreCase("" + i)) {
+                    element.click();
+                }
             }
-        }
-
 
         }
 
+
+//        for (WebElement eachDay : allDays) {
+//
+//            String day = eachDay.getText();
+//            System.out.println("eachDay.getText() = " + day);
+//
+//            if(day.equalsIgnoreCase("5")){
+//                eachDay.click();
+//                break;
+//            }
+//        }
+//
 
     }
+
+        }
+
+
+
 
 
