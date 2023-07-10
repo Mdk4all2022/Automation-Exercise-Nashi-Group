@@ -65,4 +65,12 @@ public class BrowserUtils {
     }
 
 
+    public static WebElement waitforClickability(WebDriver driver,WebElement element){
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+
+    }
+
+
 }
