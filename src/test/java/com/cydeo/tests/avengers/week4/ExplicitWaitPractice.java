@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -34,7 +35,7 @@ public class ExplicitWaitPractice extends TestBase {
         // click start button
         start.click();
 
-       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         //click one button
        // wait.until(ExpectedConditions.elementToBeClickable(one));
@@ -52,14 +53,26 @@ public class ExplicitWaitPractice extends TestBase {
 
 
 //   		- Verify messages are equal after click all buttons
+        WebElement text = driver.findElement(By.id("buttonmessage"));
+
 //   				- All Buttons Clicked
+        String expectedText = "All Buttons Clicked";
+        String actualText = text.getText();
+        Assert.assertEquals(actualText,expectedText);
 
 
 //   				- Clickable Buttons
+        expectedText = "Clickable Buttons";
+        wait.until(ExpectedConditions.textToBe(By.id("buttonmessage"),expectedText));
+        actualText = text.getText();
+        Assert.assertEquals(actualText,expectedText);
 
 
 //   				- Click Buttons In Order
-
+        expectedText = "Click Buttons In Order";
+        wait.until(ExpectedConditions.textToBePresentInElement(text,expectedText));
+        actualText = text.getText();
+        Assert.assertEquals(actualText,expectedText);
 
 
 
