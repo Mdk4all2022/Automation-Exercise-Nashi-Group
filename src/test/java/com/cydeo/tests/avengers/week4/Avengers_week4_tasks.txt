@@ -6,8 +6,6 @@ Task#1: Actions Practice
     - Verify Trash has 2 photo
 
 
-
-
  Task#2:  Explicit Wait Practice
 
    		- Go to "https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html"
