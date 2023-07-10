@@ -1,5 +1,6 @@
 package com.cydeo.tests.base;
 
+import com.cydeo.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,7 +31,8 @@ public abstract class TestBase {
 
     @AfterMethod
     public void tearDownMethod(){
-       // driver.quit();
+        BrowserUtils.sleep(4);
+        driver.quit();
         //driver.close();
     }
 }
