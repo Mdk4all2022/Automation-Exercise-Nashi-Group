@@ -32,7 +32,7 @@ public abstract class TestBase {
     @AfterMethod
     public void tearDownMethod(){
         BrowserUtils.sleep(4);
-        driver.quit();
+        //driver.quit();
         //driver.close();
     }
 }
