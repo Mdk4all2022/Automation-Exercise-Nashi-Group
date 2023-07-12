@@ -63,6 +63,12 @@ public class BrowserUtils {
         driver.findElement(By.linkText(option)).click();
 
     }
+    public static WebElement waitForClickAbility(WebDriver driver, WebElement element){
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        return  wait.until(ExpectedConditions.elementToBeClickable(element));
+
+
+    }
 
 
     public static WebElement waitforClickability(WebDriver driver,WebElement element){
